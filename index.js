@@ -242,7 +242,7 @@ function getCarInfoByIndex(inventory, index) {
 */
 function getLastCarInfo(inventory) {
   const car = inventory[inventory.length - 1];
-  console.log(`The is a ${car.car_make} ${car.car_model}`);
+  return `The is a ${car.car_make} ${car.car_model}`;
 }
 
 /**
@@ -254,8 +254,12 @@ function getLastCarInfo(inventory) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(inventory) {
+  let carYears = []
+  inventory.forEach(car => {
+    carYears.push(car.car_year);
+  });
+  return carYears;
 }
 
 /**
