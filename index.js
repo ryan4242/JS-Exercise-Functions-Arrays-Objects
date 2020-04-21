@@ -158,8 +158,16 @@ function appleIndex(array) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(array) {
+  array.forEach(fruit => {
+    if(fruit == 'apple') {
+      array.splice(array.indexOf(fruit), 1, true);
+    } else {
+    array.splice(array.indexOf(fruit), 1, false);
+    }
+  });
+
+  return array;
 }
 
 
