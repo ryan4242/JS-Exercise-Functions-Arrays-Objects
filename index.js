@@ -347,8 +347,16 @@ function getGermanCars(inventory) {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(miles) {
+  let trip = {
+    odometer: miles,
+    drive: function(dist) {
+      let total = dist + this.odometer;
+      this.odometer = total;
+      return this.odometer;
+    }
+  }
+  return trip;
 }
 
 /// ////// END OF CHALLENGE /////////
