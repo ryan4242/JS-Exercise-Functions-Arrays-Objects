@@ -159,15 +159,16 @@ function appleIndex(array) {
  * the returned value should be: [ false, true, false, false, true, false ].
 */
 function isItAnApple(array) {
-  array.forEach(fruit => {
-    if(fruit == 'apple') {
-      array.splice(array.indexOf(fruit), 1, true);
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] == 'apple') {
+      newArray.push(true);  
     } else {
-    array.splice(array.indexOf(fruit), 1, false);
+      newArray.push(false);
     }
-  });
+  };
 
-  return array;
+  return newArray;
 }
 
 
@@ -256,9 +257,9 @@ function getLastCarInfo(inventory) {
 */
 function getModelYears(inventory) {
   let carYears = []
-  inventory.forEach(car => {
-    carYears.push(car.car_year);
-  });
+  for (let i = 0; i < inventory.length; i++) {
+    carYears.push(inventory[i].car_year);
+  };
   return carYears;
 }
 
